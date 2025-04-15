@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Najla Safiah</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #fcc4dc;
+      text-align: center;
+      padding: 50px;
+      position: relative;
+      overflow-x: hidden;
+        background-image: image(mofusand.jpg);
+    }
+    h1 {
+      color: #ff69b4;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: rgba(236, 90, 176, 0.96);
+      margin: 10px auto;
+      padding: 15px;
+      border-radius: 20px;
+      width: 60%;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff99cc;
+      color: #ffffff;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+    img {
+      margin: 50px auto;
+      max-width: 20%;
+      border-radius: 50px;
+      display: none;
+    }
+    #love-letter {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #f79bc0;
+      border-radius: 20px;
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 6s linear infinite;
+      opacity: 0.7;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        bottom: -20px;
+        left: calc(100% * var(--i));
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.9;
+      }
+      100% {
+        bottom: 100%;
+        left: calc(100% * var(--i) + 10px);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>For Najla Safiah</h1>
+
+ <button onclick="showSurprise()">Click me for a surprise</button>
+
+<img 
+  id="catImage" 
+  src="https://spiralcute.com/characters/mofusand/en/img/main.jpg" 
+  alt="Cute Mofusand cat"
+  
+>
+
+<div id="love-letter">
+    <h2>FOR NAJLA</h2>
+  <p>
+    Hi Najla Safiah, how was your day, the reason aku buat bende ni untuk kau happy 
+      selalu, aku tahu kau banyak sangat stress kan,just keep it up okay,belajar 
+      belajar jugak tapi mental health kene jaga jugak,stay safe okay and goodluck 
+      for your exam,lop u
+  </p>
+</div>
+
+
+  <!-- Heart animation -->
+  <script>
+    function showSurprise() {
+      document.getElementById('catImage').style.display = 'block';
+    }
+
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement('div');
+  
+      heart.style.setProperty('--i', Math.random());
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      heart.style.background = `hsl(${Math.random() * 360}, 70%, 70%)`;
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
